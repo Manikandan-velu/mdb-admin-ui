@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin UI</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet" />
+    <link href="./assets/css/main.css" rel="stylesheet">
+    <link href="./assets/css/responsive.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+    <!--Main Navigation-->
+    <header>
+        <!-- Sidebar -->
+        <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+            <div class="position-sticky">
+                <div class="list-group list-group-flush mx-3 mt-4">
+                    <a href="#" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                        <i class="fas fa-table-columns fa-fw me-3"></i><span>Dashboard</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action py-2 ripple active ">
+                        <i class="fas fa-user fa-fw me-3"></i><span>Users</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                            class="fas fa-address-book fa-fw me-3"></i><span>Publications</span></a>
+                    <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                            class="fas fa-tag fa-fw me-3"></i><span>Tags</span></a>
+                    <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+                        <i class="fas fa-chart-line fa-fw me-3"></i><span>Analytics</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                            class="fas fa-user fa-fw me-3"></i><span>My Profile</span></a>
+                    <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                            class="fas fa-gear fa-fw me-3"></i><span>Account Setting</span></a>
+                </div>
+            </div>
+        </nav>
+        <!-- Sidebar -->
+
+        <!-- Navbar -->
+        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Toggle button -->
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+                    aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Search form -->
+                <form class="d-none d-md-flex input-group w-auto my-auto search">
+                    <input autocomplete="off" type="search" class="form-control search_field rounded"
+                        placeholder='Search' style="min-width: 225px" />
+                    <span class="search_icon input-group-text border-0"><i class="fas fa-search"></i></span>
+                </form>
+
+                <!-- Right links -->
+                <ul class="navbar-nav ms-auto d-flex flex-row">
+                    <!-- Notification dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#"
+                            id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge rounded-pill badge-notification bg-danger">1</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Some news</a></li>
+                            <li><a class="dropdown-item" href="#">Another news</a></li>
+                            <li>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Language -->
+                    <div class="btn-group shadow-0">
+                        <button type="button" class="btn btn-link dropdown-toggle" data-mdb-toggle="dropdown"
+                            aria-expanded="false">
+                            EN
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Arabic</a></li>
+                            <li><a class="dropdown-item" href="#">French</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Avatar -->
+                    <li class="nav-item dropdown profile">
+                        <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+                            id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="avatar"
+                                height="22" alt="" loading="lazy" />
+                            <span><strong>Mike Cage</strong></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">My profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
+    </header>
+    <!--Main Navigation-->
+
+    <!--Main layout-->
+    <main class="users-list">
+        <div class="container pt-4 px-4">
+            <h3>Users</h3>
+            <section class="users-list__search-filter">
+                <div class="d-flex flex-row justify-content-between">
+                    <!-- Search form -->
+                    <div class="filter d-flex flex-row">
+                        <form class="input-group w-auto my-auto">
+                            <input autocomplete="off" type="search" class="form-control search_field rounded"
+                                placeholder='Search for name' style="min-width: 225px" />
+                            <span class="search_icon input-group-text border-0"><i class="fas fa-search"></i></span>
+                        </form>
+                        <!-- Role -->
+                        <div class="filters">
+                            <div class="btn-group shadow-0">
+                                <button type="button" class="btn btn-link dropdown-toggle" data-mdb-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Role
+                                </button>
+                                <ul class="dropdown-menu p-3">
+                                    <li>
+                                        <div class="custom-control custom-checkbox py-1">
+                                            <input type="checkbox" class="custom-control-input" id="defaultChecked1"
+                                                checked>
+                                            <label class="custom-control-label" for="defaultChecked1">Writer</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="custom-control custom-checkbox py-1">
+                                            <input type="checkbox" class="custom-control-input" id="defaultChecked2">
+                                            <label class="custom-control-label" for="defaultChecked2">Member</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="custom-control custom-checkbox py-1">
+                                            <input type="checkbox" class="custom-control-input" id="defaultChecked3">
+                                            <label class="custom-control-label" for="defaultChecked3">Writer</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="custom-control custom-checkbox py-1">
+                                            <input type="checkbox" class="custom-control-input" id="defaultChecked4">
+                                            <label class="custom-control-label" for="defaultChecked4">Member</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="custom-control custom-checkbox py-1">
+                                            <input type="checkbox" class="custom-control-input" id="defaultChecked5">
+                                            <label class="custom-control-label" for="defaultChecked5">Writer</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Status -->
+                            <div class="btn-group shadow-0">
+                                <button type="button" class="btn btn-link dropdown-toggle" data-mdb-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Status
+                                </button>
+                                <ul class="dropdown-menu p-3">
+                                    <li>
+                                        <div class="custom-control custom-checkbox py-1">
+                                            <input type="checkbox" class="custom-control-input" id="defaultChecked1"
+                                                checked>
+                                            <label class="custom-control-label badge badge-success rounded-pill"
+                                                for="defaultChecked1">Verified</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="custom-control custom-checkbox py-1">
+                                            <input type="checkbox" class="custom-control-input" id="defaultChecked2">
+                                            <label class="custom-control-label badge badge-primary rounded-pill"
+                                                for="defaultChecked2">Not verified</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="custom-control custom-checkbox py-1">
+                                            <input type="checkbox" class="custom-control-input" id="defaultChecked3">
+                                            <label class="custom-control-label badge badge-warning rounded-pill"
+                                                for="defaultChecked3">Suspended</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="custom-control custom-checkbox py-1">
+                                            <input type="checkbox" class="custom-control-input" id="defaultChecked4">
+                                            <label class="custom-control-label badge badge-warning rounded-pill"
+                                                for="defaultChecked4">Blocked</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="custom-control custom-checkbox py-1">
+                                            <input type="checkbox" class="custom-control-input" id="defaultChecked5">
+                                            <label class="custom-control-label badge badge-warning rounded-pill"
+                                                for="defaultChecked5">Deleted</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Publisher -->
+                            <div class="btn-group shadow-0">
+                                <button type="button" class="btn btn-link dropdown-toggle" data-mdb-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Publisher
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Fox News</a></li>
+                                    <li><a class="dropdown-item" href="#">Gulf News</a></li>
+                                    <li><a class="dropdown-item" href="#">Indian Express</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <a class="btn text-white primary-btn btn-rounded d-none d-md-flex" href="#!" role="button">
+                        <i class="fab fa-plus me-2"></i>
+                        Invite User
+                    </a>
+                </div>
+                <div class="users-list__clear d-flex flex-row justify-content-between mt-3">
+                    <div class="search-badges">
+                        <span class="border badge rounded-pill badge-light py-2 px-4">member</span>
+                        <span class="border badge rounded-pill badge-light py-2 px-4">journalist</span>
+                        <span class="border badge rounded-pill badge-light py-2 px-4">publisher</span>
+                        <span class="border badge rounded-pill badge-light py-2 px-4">email</span>
+                        <span class="border badge rounded-pill badge-light py-2 px-4">blocked</span>
+
+                        <span class="border badge rounded-pill badge-light py-2 px-4">writer</span>
+
+
+                    </div>
+                    <div class="cta-group">
+                        <button type="button" class="btn btn-outline-secondary border-radius-10"
+                            data-mdb-ripple-color="dark">Clear filter</button>
+
+                        <a class="btn text-white primary-btn btn-rounded d-block d-sm-none" href="#!" role="button">
+                            <i class="fab fa-plus me-2"></i>
+                            Invite User
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+            <section class="w-100 pt-4 pb-4 table-responsive">
+                <table class="table align-middle mb-0 bg-white">
+                    <thead class="bg-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Publisher</th>
+                            <th>Last Log In</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt=""
+                                        style="width: 45px; height: 45px" class="rounded-circle" />
+                                    <div class="ms-3">
+                                        <p class="fw-bold mb-1">Joy Blair</p>
+                                        <p class="text-muted mb-0">joy.blair@gmail.com</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="fw-normal mb-1">Member</p>
+                            </td>
+                            <td>
+                                <span class="badge badge-success rounded-pill d-inline">Active</span>
+                            </td>
+                            <td>Formula News</td>
+                            <td>
+                                <button type="button" class="btn btn-link btn-sm btn-rounded">
+                                    12-08-2020, 13:10
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://mdbootstrap.com/img/new/avatars/6.jpg" class="rounded-circle"
+                                        alt="" style="width: 45px; height: 45px" />
+                                    <div class="ms-3">
+                                        <p class="fw-bold mb-1">Alex Ray</p>
+                                        <p class="text-muted mb-0">alex.ray@gmail.com</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="fw-normal mb-1">Writer</p>
+                            </td>
+                            <td>
+                                <span class="badge badge-primary rounded-pill d-inline">Onboarding</span>
+                            </td>
+                            <td>Formula News</td>
+                            <td>
+                                <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold"
+                                    data-mdb-ripple-color="dark">
+                                    15-08-2013, 16:1
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://mdbootstrap.com/img/new/avatars/7.jpg" class="rounded-circle"
+                                        alt="" style="width: 45px; height: 45px" />
+                                    <div class="ms-3">
+                                        <p class="fw-bold mb-1">Kate Hunington</p>
+                                        <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="fw-normal mb-1">Member</p>
+                            </td>
+                            <td>
+                                <span class="badge badge-warning rounded-pill d-inline">Suspended</span>
+                            </td>
+                            <td>News</td>
+                            <td>
+                                <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold"
+                                    data-mdb-ripple-color="dark">
+                                    16-08-2013, 1:10
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://mdbootstrap.com/img/new/avatars/6.jpg" class="rounded-circle"
+                                        alt="" style="width: 45px; height: 45px" />
+                                    <div class="ms-3">
+                                        <p class="fw-bold mb-1">James Brown</p>
+                                        <p class="text-muted mb-0">james.brow@gmail.com</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="fw-normal mb-1">Writer</p>
+                            </td>
+                            <td>
+                                <span class="badge badge-primary rounded-pill d-inline">Onboarding</span>
+                            </td>
+                            <td>Formula News</td>
+                            <td>
+                                <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold"
+                                    data-mdb-ripple-color="dark">
+                                    15-08-2013, 16:1
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://mdbootstrap.com/img/new/avatars/3.jpg" class="rounded-circle"
+                                        alt="" style="width: 45px; height: 45px" />
+                                    <div class="ms-3">
+                                        <p class="fw-bold mb-1">Lary Caldwel</p>
+                                        <p class="text-muted mb-0">lary.cald@gmail.com</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="fw-normal mb-1">Member</p>
+                            </td>
+                            <td>
+                                <span class="badge badge-primary rounded-pill d-inline">Onboarding</span>
+                            </td>
+                            <td>Formula News</td>
+                            <td>
+                                <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold"
+                                    data-mdb-ripple-color="dark">
+                                    15-08-2013, 16:1
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://mdbootstrap.com/img/new/avatars/4.jpg" class="rounded-circle"
+                                        alt="" style="width: 45px; height: 45px" />
+                                    <div class="ms-3">
+                                        <p class="fw-bold mb-1">Caroline Caldwel</p>
+                                        <p class="text-muted mb-0">caroline.cald@gmail.com</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="fw-normal mb-1">Member</p>
+                            </td>
+                            <td>
+                                <span class="badge badge-primary rounded-pill d-inline">Onboarding</span>
+                            </td>
+                            <td>Formula News</td>
+                            <td>
+                                <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold"
+                                    data-mdb-ripple-color="dark">
+                                    15-08-2013, 16:1
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://mdbootstrap.com/img/new/avatars/2.jpg" class="rounded-circle"
+                                        alt="" style="width: 45px; height: 45px" />
+                                    <div class="ms-3">
+                                        <p class="fw-bold mb-1">Lary Caldwel</p>
+                                        <p class="text-muted mb-0">lary.cald@gmail.com</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="fw-normal mb-1">Consultant</p>
+                            </td>
+                            <td>
+                                <span class="badge badge-primary rounded-pill d-inline">Onboarding</span>
+                            </td>
+                            <td>Formula News</td>
+                            <td>
+                                <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold"
+                                    data-mdb-ripple-color="dark">
+                                    15-08-2013, 16:1
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" class="rounded-circle"
+                                        alt="" style="width: 45px; height: 45px" />
+                                    <div class="ms-3">
+                                        <p class="fw-bold mb-1">Jhon Turner</p>
+                                        <p class="text-muted mb-0">jhon.cald@gmail.com</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="fw-normal mb-1">Consultant</p>
+                            </td>
+                            <td>
+                                <span class="badge badge-primary rounded-pill d-inline">Onboarding</span>
+                            </td>
+                            <td>Formula News</td>
+                            <td>
+                                <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold"
+                                    data-mdb-ripple-color="dark">
+                                    15-08-2013, 16:1
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <nav aria-label="..." class="pagination-container">
+                <ul class="pagination pagination">
+                    <li class="page-item">
+                        <a class="page-link">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">2 <span class="visually-hidden">(current)</span></a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </main>
+    <!--Main layout-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"></script>
+</body>
+
+</html>

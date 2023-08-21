@@ -1,0 +1,45 @@
+@media (max-width: 575.98px) {
+
+    .users-list__search-filter .filter,
+    .users-list__clear {
+        flex-direction: column !important;
+    }
+
+    .users-list__clear .cta-group {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        height: 80px;
+        margin-top: 10px;
+    }
+
+    .table-responsive {
+        padding: 10px !important;
+    }
+
+    .table-responsive table {
+        font-size: 12px;
+    }
+
+    tbody tr td:last-child,
+    tbody tr td:last-child button {
+        padding: 0;
+    }
+
+    .user-info {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+@media (min-width: 991.98px) {
+    main {
+        padding-left: 240px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .sidebar {
+        width: 100%;
+    }
+}
